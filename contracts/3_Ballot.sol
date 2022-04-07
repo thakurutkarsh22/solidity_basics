@@ -21,6 +21,7 @@ contract Lottery {
     function pickWInner() public {
         uint index = random() % players.length;
         players[index].transfer(this.balance); // this -> instance of current contract // balance is the money in the contract
+        players = new address[](0)
     } 
 }
 
