@@ -18,14 +18,22 @@ contract Lottery {
         return uint(keccak256(block.difficulty, now, players)); // block, now is also a global variable
     }
 
-    function pickWInner() public {
-        require(msg.sender == manager);
+    function pickWInner() public restricted {
 
         uint index = random() % players.length;
         players[index].transfer(this.balance); // this -> instance of current contract // balance is the money in the contract
         players = new address[](0);
-    } 
+    }
+
+    modifier restricted() {
+        require(msg.sender == manager);
+        _; // this _ is like the target that the function om which this modifier is implemented the body of that 
+        // function body will be take out and inserted in this _ 
+            // this is done behind the scenes.
+    }
 }
 
 
 // contract code will go here
+
+// function modifier: to make sure we dont repeat ourself
