@@ -19,9 +19,11 @@ contract Lottery {
     }
 
     function pickWInner() public {
+        require(msg.sender == manager);
+
         uint index = random() % players.length;
         players[index].transfer(this.balance); // this -> instance of current contract // balance is the money in the contract
-        players = new address[](0)
+        players = new address[](0);
     } 
 }
 
