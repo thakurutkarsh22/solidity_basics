@@ -10,7 +10,7 @@ contract Lottery {
     }
 
     function enter() public payable { // payable to make the player pay
-        require(msg.value > 1 ether); // ether make sure the conversion happen from eth to wei
+        require(msg.value > 0.01 ether); // ether make sure the conversion happen from eth to wei
         players.push(msg.sender);
     }
 
@@ -30,6 +30,10 @@ contract Lottery {
         _; // this _ is like the target that the function om which this modifier is implemented the body of that 
         // function body will be take out and inserted in this _ 
             // this is done behind the scenes.
+    }
+
+    function getPlayers() public view returns (address[]){
+        return players;
     }
 }
 

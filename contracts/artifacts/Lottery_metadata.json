@@ -29,6 +29,20 @@
 				"type": "function"
 			},
 			{
+				"constant": true,
+				"inputs": [],
+				"name": "getPlayers",
+				"outputs": [
+					{
+						"name": "",
+						"type": "address[]"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
 				"constant": false,
 				"inputs": [],
 				"name": "enter",
@@ -84,9 +98,9 @@
 	},
 	"sources": {
 		"contracts/3_Ballot.sol": {
-			"keccak256": "0xcd81fbec595016e3f1e9c6f21c3713b8a99efc1e18b29e627813b7668aecdaa2",
+			"keccak256": "0xe9c06c74f94873a04f74413ddab863b030358793580cf0a94f08a0da8ab9f233",
 			"urls": [
-				"bzzr://0db0c74003cb0eb268c7d75efb35506c5905668b4222ad94e1bd3a603405cd2e"
+				"bzzr://f119bb1d8c402bcff9ade815c04de5ae155730bf7b203d6d5b978b85423c9239"
 			]
 		}
 	},
